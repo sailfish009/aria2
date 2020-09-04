@@ -3,6 +3,7 @@ from torch import nn
 
 class Aria2(nn.Module):
     """
+    https://arxiv.org/pdf/1805.08878.pdf
     ARiA2 activation function, a special case of ARiA, for ARiA = f(x, 1, 0, 1, 1, b, 1/a)
     """
 
