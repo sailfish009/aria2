@@ -1,3 +1,5 @@
+import torch
+
 class Aria2(nn.Module):
     """
     ARiA2 activation function, a special case of ARiA, for ARiA = f(x, 1, 0, 1, 1, b, 1/a)
