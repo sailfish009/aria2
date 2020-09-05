@@ -14,3 +14,19 @@ class Aria2(nn.Module):
 
     def forward(self, x):
         return x* ((1 + torch.exp(-x)**self.b)**(-self.a))
+    
+
+class Gompertz(nn.Module):
+    """
+    https://forums.fast.ai/t/implementing-new-activation-functions-in-fastai-library/17697
+    """
+
+    def __init__(self, a=1., b = 0.5, c=0.5):
+        super(Gompertz, self).__init__()
+        self.a = b
+        self.b = b
+        self.c = c
+
+    def forward(self, x):
+        gompertz = self.a * torch.exp(-self.b * torch.exp(-self.c * x))
+        return gompertz
