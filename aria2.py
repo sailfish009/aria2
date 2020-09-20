@@ -47,5 +47,5 @@ class Aria2_Gompertz(nn.Module):
 
     def forward(self, x):
         gompertz = self.a * torch.exp(-self.b * torch.exp(-self.c * x))
-        aria2 = x* ((1 + torch.exp(-x)**self.b)**(-self.a))
+        aria2 = x* ((1 + torch.exp(-x)**self.d)**(-self.e))
         return gompertz * aria2    
