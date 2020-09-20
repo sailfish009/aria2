@@ -30,3 +30,22 @@ class Gompertz(nn.Module):
     def forward(self, x):
         gompertz = self.a * torch.exp(-self.b * torch.exp(-self.c * x))
         return gompertz
+    
+
+class Aria2_Gompertz(nn.Module):
+    """
+    test: Aria2 + Gompertz
+    """
+    
+    def __init__(self, a=1., b = 0.5, c=0.5, d=1.5, e=2.):
+        super(Aria2_Gompertz, self).__init__()
+        self.a = b
+        self.b = b
+        self.c = c
+        self.d = d
+        self.e = e
+
+    def forward(self, x):
+        gompertz = self.a * torch.exp(-self.b * torch.exp(-self.c * x))
+        aria2 = x* ((1 + torch.exp(-x)**self.b)**(-self.a))
+        return gompertz * aria2    
